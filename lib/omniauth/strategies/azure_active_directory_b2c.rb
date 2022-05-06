@@ -55,8 +55,7 @@ module OmniAuth
       end
 
       def policy
-        puts "policy_options: #{policy_options.inspect}"
-        @policy = Policy.new(**policy_options.symbolize_keys)
+        @policy = Policy.new(**policy_options.to_h.symbolize_keys)
       end
 
       def redirect_uri
